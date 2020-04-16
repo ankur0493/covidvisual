@@ -4,8 +4,8 @@ var height = 400, width = 600;
 
 var dates = new Array();
 d3.json("https://raw.githubusercontent.com/ankur0493/covidvisual/master/mohfw/national_confirmed_cases.json")
-.then(data => d3.map(data.rows, function(d){return d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.key[0]).setHours(0,0,0,0)}))
-.then(map => map.values().map(function(d, i){return {date:d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.key[0]), total_confirmed: d.value}}))
+.then(data => d3.map(data, function(d){return d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.date).setHours(0,0,0,0)}))
+.then(map => map.values().map(function(d, i){return {date:d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.date), total_confirmed: d.total_confirmed}}))
 .then(function(data){
   var svg = d3.select("#covid-19-cases")
       .append("svg")
