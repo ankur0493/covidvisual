@@ -3,7 +3,7 @@ var margin = ({top: 20, right: 40, bottom: 30, left: 50});
 var height = 400, width = 600;
 
 var dates = new Array();
-d3.json("https://raw.githubusercontent.com/datameet/covid19/master/data/total_confirmed_cases.json")
+d3.json("https://raw.githubusercontent.com/ankur0493/covidvisual/master/mohfw/national_confirmed_cases.json")
 .then(data => d3.map(data.rows, function(d){return d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.key[0]).setHours(0,0,0,0)}))
 .then(map => map.values().map(function(d, i){return {date:d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.key[0]), total_confirmed: d.value}}))
 .then(function(data){
