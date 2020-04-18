@@ -6,7 +6,6 @@ var dates = new Array();
 d3.json("https://raw.githubusercontent.com/ankur0493/covidvisual/master/icmr/testing_data.json")
 .then(data => data.map(function(d, i){return {date:d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.report_time), samples_tested: d.samples}}))
 .then(function(data){
-  console.log(data);
   var svg = d3.select("#covid-19-tests")
       .append("svg")
       .attr("viewBox", [0, 0, width, height])

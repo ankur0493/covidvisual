@@ -13,6 +13,7 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const babel = require('gulp-babel');
+const replace = require('gulp-replace');
 const uglify = require("gulp-uglify");
 
 // Load package.json for banner
@@ -105,7 +106,7 @@ function css() {
 function js() {
   return gulp
     .src([
-      './src.js/*.js',
+      './src/js/*.js',
       '!./src/js/*.min.js',
     ])
     .pipe(babel({
@@ -129,6 +130,7 @@ function html() {
       collapseWhitespace: true,
       removeComments: true
     }))
+    .pipe(replace('GA_TRACKING_ID', process.env.GA_TRACKING_ID))
     .pipe(gulp.dest('./dist'));
 }
 
