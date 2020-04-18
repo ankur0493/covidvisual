@@ -4,14 +4,14 @@ threadsafe: true
 
 handlers:
 - url: /
-  static_files: src/index.html
-  upload: src/index.html
+  static_files: dist/index.html
+  upload: dist/index.html
   secure: always
   redirect_http_response_code: 301
 
 - url: /(.*)
-  static_files: src/\1
-  upload: src/(.*)
+  static_files: dist/\1
+  upload: dist/(.*)
   secure: always
   redirect_http_response_code: 301
 
