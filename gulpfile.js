@@ -15,6 +15,7 @@ const sass = require("gulp-sass");
 const babel = require('gulp-babel');
 const replace = require('gulp-replace');
 const uglify = require("gulp-uglify");
+const workbox = require('workbox-build');
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -148,16 +149,71 @@ function icons() {
     .pipe(gulp.dest('./dist/img'));
 }
 
+function generate_service_worker() {
+  return workbox.generateSW({
+    globDirectory: './dist',
+    globPatterns: [
+      '**/*.{html,js,css}'
+    ],
+    swDest: './dist/sw.js',
+    // Define runtime caching rules.
+    runtimeCaching: [{
+      // Match any request that ends with .png, .jpg, .jpeg or .svg.
+      urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+
+      // Apply a cache-first strategy.
+      handler: 'CacheFirst',
+
+      options: {
+        // Use a custom cache name.
+        cacheName: 'images',
+
+        // Only cache 10 images.
+        expiration: {
+          maxEntries: 10,
+        },
+      },
+    }, {
+      // Match any request that ends with .ttf
+      urlPattern: /\.(?:ttf)$/,
+
+      // Apply a cache-first strategy.
+      handler: 'CacheFirst',
+
+      options: {
+        // Use a custom cache name.
+        cacheName: 'fonts',
+
+        // Only cache 3 fonts.
+        expiration: {
+          maxEntries: 3,
+        },
+      },
+    }],
+    clientsClaim: true,
+    skipWaiting: true
+  }).then(({warnings}) => {
+    // In case there are any warnings from workbox-build, log them.
+    for (const warning of warnings) {
+      console.warn(warning);
+    }
+    console.info('Service worker generation completed.');
+  }).catch((error) => {
+    console.warn('Service worker generation failed:', error);
+  });
+};
+
 // Watch files
 function watchFiles() {
   gulp.watch("./src/scss/**/*", css);
   gulp.watch(["./src/js/**/*", "!./src/js/**/*.min.js"], js);
-  gulp.watch("./src/**/*.html", browserSyncReload);
+  gulp.watch("./src/**/*.html", html);
+  gulp.watch("./src/*", browserSyncReload);
 }
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js, html, icons));
+const build = gulp.series(vendor, gulp.parallel(css, js, html, icons), generate_service_worker);
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
