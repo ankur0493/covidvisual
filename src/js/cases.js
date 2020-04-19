@@ -3,11 +3,9 @@ var margin = ({top: 20, right: 40, bottom: 30, left: 50});
 var height=325, width=650;
 
 var dates = new Array();
-d3.json("https://raw.githubusercontent.com/ankur0493/covidvisual/master/mohfw/national_confirmed_cases.json")
-.then(data => d3.map(data, function(d){return d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.date).setHours(0,0,0,0)}))
-.then(map => map.values().slice(1).map(function(d, i){return {date:d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.date), total_confirmed: d.total_confirmed - map.values()[i].total_confirmed}}))
-.then(function(data){
-  var svg = d3.select("#covid-19-cases-daily")
+
+var plotChart = (data, divId) => {
+  var svg = d3.select(divId)
       .append("svg")
       .attr("viewBox", [0, 0, width, height])
       .style("overflow", "visible");
@@ -31,8 +29,7 @@ d3.json("https://raw.githubusercontent.com/ankur0493/covidvisual/master/mohfw/na
       .attr("transform", `translate(0,${height - margin.bottom})`)
       .call(d3.axisBottom(x).ticks(width / 80).tickSizeOuter(0));
 
-  function hover(svg, path) {
-    
+  var hover = (svg, path) => {
     if ("ontouchstart" in document) svg
         .style("-webkit-tap-highlight-color", "transparent")
         .on("touchmove", moved)
@@ -88,7 +85,6 @@ d3.json("https://raw.githubusercontent.com/ankur0493/covidvisual/master/mohfw/na
       tooltip.attr("display", "none");
     }
   }
-
   svg.append("g")
     .call(xAxis);
 
@@ -110,4 +106,30 @@ d3.json("https://raw.githubusercontent.com/ankur0493/covidvisual/master/mohfw/na
     .attr("d", line);
 
   svg.call(hover, path);
-});
+}
+
+d3.json("../data/mohfw/national_confirmed_cases.json")
+.then(data => {
+  var latestData = data[data.length - 1];
+  d3.select("#confirmed_count").text(latestData.total_confirmed_cases);
+  d3.select("#active_count").text(latestData.active_cases);
+  d3.select("#recovered_count").text(latestData.cured);
+  d3.select("#deceased_count").text(latestData.death);
+  return data
+})
+.then(data => data.filter(d => d.include_in_chart))
+.then(data => d3.map(data, d => {return d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.record_time).setHours(0,0,0,0)}))
+.then(map => {
+  var totalData = map.values().map((d, i) => {
+    return {
+      date:d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.record_time),
+      total_confirmed: d.total_confirmed_cases}
+  })
+  plotChart(totalData, "#covid-19-cases")
+  var dailyData = map.values().slice(1).map((d, i) => {
+    return {
+      date:d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.record_time),
+      total_confirmed: d.total_confirmed_cases - map.values()[i].total_confirmed_cases}
+  })
+  plotChart(dailyData, "#covid-19-cases-daily")
+})

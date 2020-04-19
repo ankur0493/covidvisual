@@ -140,6 +140,11 @@ function html() {
     .pipe(gulp.dest('./dist'));
 }
 
+function data() {
+  return gulp.src('./data/**/*.json')
+  .pipe(gulp.dest('dist/data'));
+}
+
 // Icons task
 function icons() {
   return gulp
@@ -208,18 +213,20 @@ function watchFiles() {
   gulp.watch("./src/scss/**/*", css);
   gulp.watch(["./src/js/**/*", "!./src/js/**/*.min.js"], js);
   gulp.watch("./src/**/*.html", html);
+  gulp.watch("./data/**/*.json", data);
   gulp.watch("./src/*", browserSyncReload);
 }
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js, html, icons), generate_service_worker);
+const build = gulp.series(vendor, gulp.parallel(css, js, html, icons, data), generate_service_worker);
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
 exports.css = css;
 exports.js = js;
 exports.html = html;
+exports.data = data;
 exports.clean = clean;
 exports.vendor = vendor;
 exports.build = build;

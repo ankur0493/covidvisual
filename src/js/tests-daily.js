@@ -3,7 +3,7 @@ var margin = ({top: 20, right: 40, bottom: 30, left: 50});
 var height=325, width=650;
 
 var dates = new Array();
-d3.json("https://raw.githubusercontent.com/ankur0493/covidvisual/master/icmr/testing_data.json")
+d3.json("../data/icmr/testing_data.json")
 .then(data => data.slice(1).map(function(d, i){return {date:d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z")(d.report_time), samples_tested: d.samples - data[i].samples}}))
 .then(function(data){
   var svg = d3.select("#covid-19-tests-daily")

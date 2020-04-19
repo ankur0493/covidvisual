@@ -15,5 +15,3 @@ handlers:
   secure: always
   redirect_http_response_code: 301
 
-env_variables:
-  GA_TRACKING_ID: your-tracking-id
