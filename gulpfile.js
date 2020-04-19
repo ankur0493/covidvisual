@@ -66,6 +66,8 @@ function modules() {
   // Font Awesome
   var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*.min.css')
     .pipe(gulp.dest('./dist/vendor'));
+  var fontAwesome = gulp.src('./node_modules/@fortawesome/**/webfonts/*')
+    .pipe(gulp.dest('./dist/vendor'));
   // jQuery Easing
   var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.min.js')
     .pipe(gulp.dest('./dist/vendor/jquery-easing'));
