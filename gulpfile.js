@@ -45,32 +45,33 @@ function browserSyncReload(done) {
   done();
 }
 
-// Clean vendor
+// Clean dist vendor
 function clean() {
-  return del(["./dist/vendor/"]);
+  return del(["./dist/vendor/", "./src/vendor/"]);
 }
 
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
   // Bootstrap JS
-  var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/*')
+  var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/*.min.js')
     .pipe(gulp.dest('./dist/vendor/bootstrap/js'));
+
   // Bootstrap SCSS
   var bootstrapSCSS = gulp.src('./node_modules/bootstrap/scss/**/*')
-    .pipe(gulp.dest('./dist/vendor/bootstrap/scss'));
+    .pipe(gulp.dest('./src/vendor/bootstrap/scss'));
 
   // d3JS
-  var d3JS = gulp.src('./node_modules/d3/dist/*.js')
+  var d3JS = gulp.src('./node_modules/d3/dist/*.min.js')
     .pipe(gulp.dest('./dist/vendor/d3'));
   // Font Awesome
-  var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
+  var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*.min.css')
     .pipe(gulp.dest('./dist/vendor'));
   // jQuery Easing
-  var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
+  var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.min.js')
     .pipe(gulp.dest('./dist/vendor/jquery-easing'));
   // jQuery
   var jquery = gulp.src([
-      './node_modules/jquery/dist/*',
+      './node_modules/jquery/dist/**/*.min.js',
       '!./node_modules/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('./dist/vendor/jquery'));
