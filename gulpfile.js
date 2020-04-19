@@ -126,13 +126,24 @@ function js() {
 
 // HTML task
 function html() {
-  return gulp.src(['./src/*.html'])
+  return gulp.src([
+    './src/*.html',
+    './src/*.webmanifest',])
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeComments: true
     }))
     .pipe(replace('GA_TRACKING_ID', process.env.GA_TRACKING_ID))
     .pipe(gulp.dest('./dist'));
+}
+
+// Icons task
+function icons() {
+  return gulp
+    .src([
+      './src/img/*',
+    ])
+    .pipe(gulp.dest('./dist/img'));
 }
 
 // Watch files
@@ -144,7 +155,7 @@ function watchFiles() {
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js, html));
+const build = gulp.series(vendor, gulp.parallel(css, js, html, icons));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
