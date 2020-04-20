@@ -1,8 +1,7 @@
 src/
 scripts/
 node_modules/
-icmr/
-mohfw/
+/data/
 package.json
 package-lock.json
 gulpfile.js
