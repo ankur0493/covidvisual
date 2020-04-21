@@ -133,6 +133,8 @@ function js() {
 function html() {
   return gulp.src([
     './src/*.html',
+    './src/*.xml',
+    './src/*.txt',
     './src/*.webmanifest',])
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -225,7 +227,6 @@ function buildSitemap() {
         .pipe(gulp.dest('dist/'))
         .pipe(save.restore('before-sitemap'))
 };
-
 
 // Watch files
 function watchFiles() {
