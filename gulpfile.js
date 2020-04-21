@@ -133,8 +133,6 @@ function js() {
 function html() {
   return gulp.src([
     './src/*.html',
-    './src/*.xml',
-    './src/*.txt',
     './src/*.webmanifest',])
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -156,6 +154,11 @@ function icons() {
       './src/img/*',
     ])
     .pipe(gulp.dest('./dist/img'));
+}
+
+function robots() {
+  return gulp.src(['./src/robots.txt'])
+  .pipe(gulp.dest('./dist'));
 }
 
 function generate_service_worker() {
@@ -240,7 +243,7 @@ function watchFiles() {
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js, html, icons, data), buildSitemap);
+const build = gulp.series(vendor, gulp.parallel(css, js, html, icons, data, robots), buildSitemap);
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
@@ -248,6 +251,7 @@ exports.css = css;
 exports.js = js;
 exports.html = html;
 exports.data = data;
+exports.robots = robots;
 exports.sitemap = buildSitemap;
 exports.clean = clean;
 exports.vendor = vendor;

@@ -1,1 +1,3 @@
-Sitemap: https://www.covidvisual.in/sitemap.xml User-agent: * Disallow:
+Sitemap: https://www.covidvisual.in/sitemap.xml
+User-agent: *
+Disallow:

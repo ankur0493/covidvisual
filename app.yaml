@@ -64,6 +64,20 @@ handlers:
   secure: always
   redirect_http_response_code: 301
 
+- url: /(.*\.txt)
+  mime_type: text/plain
+  static_files: dist/\1
+  upload: dist/(.*\.txt)
+  secure: always
+  redirect_http_response_code: 301
+
+- url: /(.*\.xml)
+  mime_type: application/xml
+  static_files: dist/\1
+  upload: dist/(.*\.xml)
+  secure: always
+  redirect_http_response_code: 301
+
 - url: /(.+)
   static_files: dist/\1.html
   upload: dist/(.+)
