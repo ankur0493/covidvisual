@@ -16,6 +16,8 @@ const babel = require('gulp-babel');
 const replace = require('gulp-replace');
 const uglify = require("gulp-uglify");
 const workbox = require('workbox-build');
+const sitemap = require('gulp-sitemap');
+var save = require('gulp-save');
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -208,18 +210,36 @@ function generate_service_worker() {
   });
 };
 
+// Sitemap task
+function buildSitemap() {
+    return gulp.src('./dist/*.html', {
+            read: false
+        })
+        .pipe(save('before-sitemap'))
+        .pipe(sitemap({
+          siteUrl: 'http://www.covidvisual.in',
+          getLoc: function(siteUrl, loc, entry) {
+          // Removes the file extension if it exists
+          return loc.replace(/\.\w+$/, '');},
+        }))
+        .pipe(gulp.dest('dist/'))
+        .pipe(save.restore('before-sitemap'))
+};
+
+
 // Watch files
 function watchFiles() {
   gulp.watch("./src/scss/**/*", css);
   gulp.watch(["./src/js/**/*", "!./src/js/**/*.min.js"], js);
   gulp.watch("./src/**/*.html", html);
+  gulp.watch("./src/**/*.html", buildSitemap);
   gulp.watch("./data/**/*.json", data);
   gulp.watch("./src/*", browserSyncReload);
 }
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js, html, icons, data));
+const build = gulp.series(vendor, gulp.parallel(css, js, html, icons, data), buildSitemap);
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
@@ -227,6 +247,7 @@ exports.css = css;
 exports.js = js;
 exports.html = html;
 exports.data = data;
+exports.sitemap = buildSitemap;
 exports.clean = clean;
 exports.vendor = vendor;
 exports.build = build;
