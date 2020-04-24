@@ -1,0 +1,186 @@
+{
+    "Delhi": {
+        "districts": {
+            "South": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "Malviya Nagar: Entire affected street near Gandhi Park",
+                    "L 1, Sangam Vihar: Entire affected street of Gali No 5, 6 & 7",
+                    "Deoli Extension: The affected area around H. No.A-176",
+                    "Khirki village: Shop No.- J-4/49, Khirki Extension",
+                    "Chirag Delhi: Jain Mohalla, Pandit Mohalla from Epic Centre 715",
+                    "Safdarjung Enclave: Boundary start from B-4/200 and cover the whole locality till backside of humayupur lane includes Ashiana complex & B-4/206",
+                    "Hauz Rani: House No. 50, from mother dairy to back corner of Raja Ram Mohan School",
+                    "Entire effected area around H.No. 859/20, L-II, Sangam Vihar",
+                    "Malviya Nagar: H.No. 153/B, 4th floor, Savitri Nagar",
+                    "Gali No. 2, 3 and 4 in Devli Extension",
+                    "F-313, Near Shiva Mandir Lado Darai and F-274, second floor of Lado Sarai",
+                    "F-258, Campa Cola Gali, Lado Sarai",
+                    "Mehrauli: Entire affected area of Samshi Talab, Mehrauli including A-3, lake of view apartment"
+                ]
+            },
+            "South West": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "Dwarka Sector 11: Shahjahanabad society, plot no 1",
+                    "Dinpur Village",
+                    "Mahavir Enclave: Gali No. 5 & 5A, H-2 Block, Bengali Colony",
+                    "Janakpuri: C-2, Block, Kothi No- 119",
+                    "Kapashera: Plot No. 1294 in Theke Wali Gali opposite DC Office",
+                    "Dwarka: RZF-756/7, Gali No. 1 Band, Raj Nagar II"
+                ]
+            },
+            "South East": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "Markaz Masjid and Nizamuddin Basti",
+                    "Nizamuddin West (G and D block) areas",
+                    "Zakir Nagar: Area of Street/Gali No. 18 to 22 and nearby area of Abu Bakar Masjid of Zakir Nagar 10 (Core) rest of Zakir Nagar as Buffer Zone",
+                    "Jaitpur Extension, Part-II: H. No. 811 to 829, 842 to 835, Khadda Colony",
+                    "Jaitpur Extension, Part-II: H. No. 1144 to 1134 and 618 to 623, Khadda Colony",
+                    "Madanpur Khadar Extension: Gali No. 16, Kachhi Colony",
+                    "Madanpur Khadar: Mehela Mohalla",
+                    "Abu Fazal Enclave: E-Block",
+                    "Abu Fazal Enclave: H-Block (Near Umra Masjid)"
+                    "East of Kailash: H No. 97 to 107 and H. No. 120-127, Kailash Hills",
+                    "East of Kailash: E-Block (E-284 to E-294)",
+                    "East of Kailash: H. No. 53 to 55 & 25, Shera Mohalla, Garhi",
+                    "Sangam Vihar: Gali No 1, 2 and 3, Block-D, House No 112B, Gali No 2",
+                    "Tughlaqabad: Entire gali starting from house number G-54 to F-107 and Entire gali starting from house number CN-854 to 137, Chhuriya Mohalla, Tughlaqabad Village",
+                    "Abu Fazal enclave: Gali no. 6, A block, Shaheen Bagh",
+                    "Tughlakabad Extension: Gali No. 26 and 26B, H.No. 2056 to 2092 and Gali No. 27 and 27B, H.No. 2063 to 2083",
+                    "New Friends Colony: Whole gali H.No. 48 to Chaupal, A Block, Khizrabad",
+                    "Gali No. 24 to 28 Tughlakabad Extension, Delhi (Core Area)",
+                    "Hari Nagar Extension: H.No. F-138 and F-139 in Gali No. 1 (Shiv mandir wali gali, Harsh Vihar"
+                ]
+            },
+            "North": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "Containment_zones": [
+                    "Jahangirpuri: B Block",
+                    "Jahangirpuri: Gali No. 1 to 10 (1 to 1000) C Block",
+                    "Jahangirpuri: 1100 Wali Gali (house number 1181-1200), 1200 Wali Gali (house number 1238-1268), 1300 Wali Gali (house number 1306-1331), H-3 Block",
+                    "Model Town: G,H and I Block of Police Colony",
+                    "Jahangirpuri: H.No. 716 to 785, H.No. 786 to 860, H.No. 861 to 950 K-Block",
+                    "Jahangirpuri: G-Block",
+                    "Jahangirpuri: Flat No. 265 to 500, Sanjay Enclave"
+                ]
+            },
+            "East": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "Kalyanpuri: H. No 141 to H. No 180, Gali no. 14",
+                    "Vasundhara Enclave: Mansara Apartments",
+                    "Khichripur: 3 Galis of Khichripur including Gali containing H. No. 5/387",
+                    "Pandav Nagar: Gali No 9",
+                    "Mayur Vihar, Phase I Extension: Vardhaman Apartments",
+                    "Patparganj: Mayurdhwaj Apartments, I P Extension",
+                    "Krishan Kunj Extension: Gali no. 4, from H. No. J- 3/115 (Nagar Dairy) to H. No. J- 3/108 (towards Anar wali Masjid Chowk)",
+                    "Krishan Kunj Extension: Gali No. 4, from H. No J- 3/101 to H. No. J - 3/107 Krishan Kunj Extension",
+                    "West Vinod Nagar: Gali No. 5, A Block (From H No. A- 176 to A-189)",
+                    "Trilok Puri: H. No. 34/156 to H. No. 34/189 (Resettlement Colony), Block-34",
+                    "H.No 300 in Gali No. 3 to H.No 739/16 under Krishna Puri Main Road in Mandawali"
+                ]
+            },
+            "Shahdara": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "GTB Enclave: E-Pocket",
+                    "Old Seemapuri: J & K, L and H pockets Dilshad Garden; G, H, J, Blocks",
+                    "Dilshad Colony: F- 70 to 90 block",
+                    "Jhilmil Colony: Pratap Khand",
+                    "East Ram Nagar: Street no. 3, 4, and 5",
+                    "Dayanand Vihar: H.No. 15 to 101"
+                ]
+            },
+            "New Delhi": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "Moti Bagh: Shastri Market, including J.J. Cluster of South Moti Bagh",
+                    "Bengali Market/ Babar Road adjoining area of Todarmal Road, Babar Lane and School Lane",
+                    "Israel Camp, Rang Puri Pahari and it's adjoining area of buffer zone",
+                    "Budh Nagar, Inderpuri and it's adjoining aread of buffer zone",
+                    "EA Block in Inderpuri"
+                ]
+            },
+            "Central": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "Sadar Bazaar, Central District",
+                    "Chandni Mahal, Central District",
+                    "Nabi Karim, Central District",
+                    "Balaji Apartment, Sant Nagar, Burari",
+                    "Bara Hindu Rao Area",
+                    "Nawab Ganj Area",
+                    "Oberoi Apartment, Civil Lines"
+                ]
+            },
+            "West": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "In and around area of G-174, Capital Greens, DLF, Motinagar",
+                    "In and around area of B- 1/2, Paschim Vihar",
+                    "In and around area of 11/3, 2nd Floor Ashok Nagar",
+                    "In and around area of H. No. A-30, Mansarovar Garden",
+                    "In and around area of A-1B/75A, Krishna Apartment, Pashchim Vihar",
+                    "In and around area of A-280, JJ Colony, Madipur",
+                    "In and around area of 36/4, East Patel Nagar",
+                    "In and around area of C-105, Hari Nagar",
+                    "In and around area of B-333, Hari Nagar",
+                    "In and around area of C-785, Third Floor, Camp No.2, Nangloi",
+                    "In and around area of RZ-168, K2 Block, Nihal Vihar",
+                    "In and around area of G-1 2nd Floor, Mansarovar Garden",
+                    "Tilak Vihar area in Tilak Nagar"
+                ]
+            },
+            "North West": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "Shalimar Bagh: Entire AF Block"
+                ]
+            },
+            "North East": {
+                "total_cases": 0,
+                "active_cases": 0,
+                "recovered": 0,
+                "deaths": 0,
+                "containment_zones": [
+                    "Shastri Park: House number-62, Gali No-4, B-Block",
+                    "Shastri Park: E-51, Main Road and E-21 Gali No. 8",
+                    "T-606 street-18, Gautam Puri",
+                    "A-97,98,99 near Buland Masjid, Shastri Park"
+                ]
+            }
+        }
+    }
+}
