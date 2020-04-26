@@ -18,10 +18,10 @@ d3.json("../data/mohfw/state_data.json")
 })
 .then(data => {
   console.log(data);
-  var columnNames = ["State / Union Territory", "Confirmed", "Active", "Recovered", "Deceased"]
+  var columnNames = ["State/UT", "Confirmed", "Active", "Recovered", "Deceased"]
   var table = d3.select("#state-statistics")
                 .append("table")
-                .attr("class", "table table-hover");
+                .attr("class", "table table-hover table-sm table-responsive");
   table.append("thead")
     .append("tr")
       .selectAll("th")
