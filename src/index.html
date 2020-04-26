@@ -59,7 +59,6 @@
           <a class="nav-link" href="/">
             <span>Home</span></a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="important-links">
             <span>Important Links</span></a>
@@ -98,7 +97,7 @@
 
           <!-- <div class="sidebar"> -->
             <a class="topbar-brand d-flex align-items-center justify-content-center" href="/">
-              <div class="mx-3">Covid Visual</sup></div>
+              <div class="mx-3">Covid Visual</div>
             </a>
           <!-- </div> -->
 
@@ -167,73 +166,84 @@
 
             <div class="row">
               <div class="col-xl-6 col-lg-6">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Total cases in India</h6>
-                  </div>
-                  <!-- Card Body -->
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <div id="covid-19-cases"></div>
-                    </div>
-                    Source: <a href="https://www.mohfw.gov.in/" target="_blank">MoHFW</a><br>
-                  </div>
-                </div>
+                <div id="state-statistics"></div>
               </div>
-
               <div class="col-xl-6 col-lg-6">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Daily new cases in India</h6>
-                  </div>
-                  <!-- Card Body -->
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <div id="covid-19-cases-daily"></div>
+                <div class="row">
+                  <div class="col">
+                    <div class="card shadow mb-4">
+                      <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Total cases in India</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <div id="covid-19-cases"></div>
+                        </div>
+                        Source: <a href="https://www.mohfw.gov.in/" target="_blank">MoHFW</a><br>
+                      </div>
                     </div>
-                    Source: <a href="https://www.mohfw.gov.in/" target="_blank">MoHFW</a><br>
                   </div>
                 </div>
-              </div>
 
-            </div>
-
-            <div class="row">
-
-              <div class="col-xl-6 col-lg-6">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Total tests in India</h6>
-                  </div>
-                  <!-- Card Body -->
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <div id="covid-19-tests"></div>
+                <div class="row">
+                  <div class="col">
+                    <div class="card shadow mb-4">
+                      <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Daily new cases in India</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <div id="covid-19-cases-daily"></div>
+                        </div>
+                        Source: <a href="https://www.mohfw.gov.in/" target="_blank">MoHFW</a><br>
+                      </div>
                     </div>
-                    Source: <a href="https://www.icmr.nic.in/" target="_blank">ICMR</a><br>
-                    * In case of missing data from ICMR for some dates, data is normalized between available dates using trends and daily testing numbers as reported by officials in press conferences
                   </div>
                 </div>
-              </div>
 
-              <div class="col-xl-6 col-lg-6">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Daily new tests in India</h6>
-                  </div>
-                  <!-- Card Body -->
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <div id="covid-19-tests-daily"></div>
+                <div class="row">
+
+                  <div class="col">
+                    <div class="card shadow mb-4">
+                      <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Total tests in India</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <div id="covid-19-tests"></div>
+                        </div>
+                        Source: <a href="https://www.icmr.nic.in/" target="_blank">ICMR</a><br>
+                        * In case of missing data from ICMR for some dates, data is normalized between available dates using trends and daily testing numbers as reported by officials in press conferences
+                      </div>
                     </div>
-                    Source: <a href="https://www.icmr.nic.in/" target="_blank">ICMR</a><br>
-                    * In case of missing data from ICMR for some dates, data is normalized between available dates using trends and daily testing numbers as reported by officials in press conferences
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="card shadow mb-4">
+                      <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Daily new tests in India</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <div id="covid-19-tests-daily"></div>
+                        </div>
+                        Source: <a href="https://www.icmr.nic.in/" target="_blank">ICMR</a><br>
+                        * In case of missing data from ICMR for some dates, data is normalized between available dates using trends and daily testing numbers as reported by officials in press conferences
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
 
             </div>
@@ -280,6 +290,8 @@
     <script src="vendor/d3/d3.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/covidvisual.min.js"></script>
+    <script src="js/home-charts.min.js"></script>
+    <script src="js/state-data.min.js"></script>
 
   </body>
 
