@@ -24,7 +24,7 @@
         "d3": "^5.15.1",
         "datatables.net-bs4": "1.10.19",
         "gulp-htmlmin": "^5.0.1",
-        "jquery": "3.4.1",
+        "jquery": "3.5.0",
         "jquery.easing": "^1.4.1"
     },
     "devDependencies": {
